@@ -1,0 +1,33 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://trusted-cdn.com;">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' https://trusted-source.com;">
+    <title>Crypto Investment Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Crypto Investment Advisor</h1>
+        <form id="investment-form">
+            <label for="risk-level">Choose Risk Level:</label>
+            <select id="risk-level">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <label for="budget">Enter Budget ($):</label>
+            <input type="number" id="budget" min="0" required>
+            <button type="submit">Get Investment Recommendations</button>
+        </form>
+        <div id="recommendations">
+            <!-- Investment recommendations will appear here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
